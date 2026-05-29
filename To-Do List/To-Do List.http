@@ -1,6 +1,31 @@
-@To_Do_List_HostAddress = http://localhost:5228
+@rootURL = http://localhost:5228
 
-GET {{To_Do_List_HostAddress}}/weatherforecast/
+GET {{rootURL}}/api/task
 Accept: application/json
 
 ###
+
+GET {{rootURL}}/api/task/2
+Accept: application/json
+
+###
+
+POST {{rootURL}}/api/task
+Content-Type: application/json
+{
+  "id": 4,
+  "title": "Go to the gym",
+  "date": "30-05-2026",
+  "description": "Go to the gym at 6 PM"
+}
+
+###
+
+PUT {{rootURL}}/api/task/3
+Content-Type: application/json
+{
+  "id": 3,
+  "title": "Take out the trash and buy groceries",
+  "date": "29-05-2026",
+  "description": "Take out the trash from the kitchen and buy milk, eggs, and bread"
+}
