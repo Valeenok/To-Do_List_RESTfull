@@ -58,6 +58,9 @@ namespace To_Do_List.Controllers
                 return BadRequest();
             }
 
+            int nextID = tasks.Any() ? tasks.Max(t => t.Id) + 1 : 1;
+            newTask.Id = nextID;
+
             tasks.Add(newTask);
             return CreatedAtAction(nameof(GetTaskById), new { id = newTask.Id }, newTask);
         }
@@ -71,7 +74,6 @@ namespace To_Do_List.Controllers
                 return NotFound();
             }
 
-            task.Id = updatedTask.Id;
             task.Date = updatedTask.Date;
             task.Title = updatedTask.Title;
             task.Description = updatedTask.Description;

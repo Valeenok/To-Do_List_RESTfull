@@ -29,3 +29,9 @@ Content-Type: application/json
   "date": "29-05-2026",
   "description": "Take out the trash from the kitchen and buy milk, eggs, and bread"
 }
+
+###
+
+DELETE {{rootURL}}/api/task/3
+
+###
